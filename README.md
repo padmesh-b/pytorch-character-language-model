@@ -1,23 +1,16 @@
-# Character Level Name Generator
+# PyTorch Character Language Model
 
-A character-level deep learning model built using PyTorch that learns patterns from names and generates new realistic names character-by-character.
+A character-level language model built using PyTorch that learns name patterns from text data and generates realistic new names using embeddings and neural networks.
 
 ---
 
 # Overview
 
-This project demonstrates how neural networks can learn sequential character patterns using embeddings and feedforward neural networks.
+This project demonstrates how deep learning can be used for character-level sequence modeling.
 
-The model is trained on a dataset of names and predicts the next character in a sequence to generate entirely new names.
+The model is trained on a dataset of names and learns how characters are related sequentially. After training, the network can generate entirely new names character-by-character.
 
-Example generated names:
-
-```text
-padmesh
-padmesin
-padmesha
-padmesaree
-```
+The project is implemented from scratch using PyTorch tensors and neural network operations.
 
 ---
 
@@ -25,9 +18,9 @@ padmesaree
 
 - Character-level language modeling
 - Custom vocabulary creation
-- Character embedding layer
+- Character embeddings
 - Feedforward neural network
-- Next-character prediction
+- Sequential next-character prediction
 - Randomized name generation
 - PyTorch implementation from scratch
 
@@ -44,7 +37,7 @@ padmesaree
 # Project Structure
 
 ```text
-character-level-name-generator/
+pytorch-character-language-model/
 │
 ├── names.txt
 ├── main.ipynb
@@ -78,37 +71,51 @@ sophia
 
 ---
 
+# How It Works
+
+The model:
+
+1. Reads names from the dataset
+2. Creates a character vocabulary
+3. Converts characters into embeddings
+4. Learns sequential character relationships
+5. Predicts the next character
+6. Generates new names using probability sampling
+
+---
+
 # Model Architecture
 
 The project uses:
 
-- Character Embeddings
+- Character Embedding Layer
 - Hidden Linear Layer
 - Tanh Activation
 - Softmax Probability Distribution
 
-The network predicts the next character based on previous characters.
+The network predicts the next character based on previous characters in the sequence.
 
 ---
 
-# Training Process
+# Training
 
-The model:
+The model is trained using:
 
-1. Reads names from dataset
-2. Creates character vocabulary
-3. Converts characters into embeddings
-4. Trains using Cross Entropy Loss
-5. Generates new names using probability sampling
+- Cross Entropy Loss
+- Gradient Descent
+- Backpropagation
+
+Training loss gradually decreases as the model learns character patterns.
 
 ---
 
-# Example Output
+# Example Generated Names
 
 ```text
 padmesin
 padmesha
 padmesaree
+padmesh
 ```
 
 ---
@@ -118,11 +125,11 @@ padmesaree
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/character-level-name-generator.git
+git clone https://github.com/YOUR_USERNAME/pytorch-character-language-model.git
 ```
 
 ```bash
-cd character-level-name-generator
+cd pytorch-character-language-model
 ```
 
 ---
@@ -135,7 +142,7 @@ pip install -r requirements.txt
 
 ---
 
-# Run Project
+# Run the Project
 
 ```bash
 jupyter notebook
@@ -149,14 +156,15 @@ main.ipynb
 
 ---
 
-# Future Improvements
+# Requirements
 
-- Add LSTM architecture
-- Add GRU architecture
-- Train on larger datasets
-- Deploy as web app
-- Add temperature sampling controls
-- Generate fantasy names
+Example `requirements.txt`
+
+```txt
+torch
+jupyter
+matplotlib
+```
 
 ---
 
@@ -170,6 +178,18 @@ This project helps understand:
 - Backpropagation
 - Sequence prediction
 - Softmax probabilities
+- PyTorch tensor operations
+
+---
+
+# Future Improvements
+
+- Add LSTM architecture
+- Add GRU architecture
+- Add Transformer models
+- Train on larger datasets
+- Deploy as web application
+- Generate fantasy or custom names
 
 ---
 
